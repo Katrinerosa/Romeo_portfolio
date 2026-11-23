@@ -1,0 +1,50 @@
+.masked-heading {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-wrap: balance;
+  -webkit-font-smoothing: antialiased;
+}
+
+.masked-heading[data-reveal="falling"] .masked-heading__reveal { opacity: 0; }
+.masked-heading__falling { display: block; position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+.masked-heading__measure { color: transparent; }
+.masked-heading__word { display: inline-block; white-space: pre; }
+.masked-heading__word:not(:last-child)::after { content: " "; }
+.masked-heading__baseline { display: inline-block; height: 0; width: 0; }
+.masked-heading__defs { height: 0; overflow: hidden; position: absolute; width: 0; }
+.masked-heading__reveal, .masked-heading__clip, .masked-heading__media { display: block; inset: 0; position: absolute; }
+.masked-heading__reveal, .masked-heading__clip { pointer-events: none; }
+.masked-heading__media { will-change: transform, filter; }
+.masked-heading__source { display: block; height: 100%; object-fit: cover; user-select: none; width: 100%; }
+.masked-heading__tint, .masked-heading__spot { display: block; inset: 0; pointer-events: none; position: absolute; }
+.masked-heading__tint { mix-blend-mode: color; }
+.masked-heading__spot--tone { background: #808080; mix-blend-mode: saturation; }
+.masked-heading__spot--shade { background: #000; opacity: .55; }
+.masked-heading__outline { height: 100%; inset: 0; overflow: visible; pointer-events: none; position: absolute; width: 100%; }
+
+.masked-heading--poster {
+  aspect-ratio: 1.85;
+  font-family: var(--font-garage-gothic), "Arial Narrow", sans-serif;
+  text-transform: uppercase;
+}
+
+.masked-heading--poster .masked-heading__measure {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.masked-heading--poster .masked-heading__word {
+  display: block;
+}
+
+.masked-heading--poster .masked-heading__word::after {
+  content: none;
+}
+
+@media (max-width: 700px) {
+  .masked-heading--poster { aspect-ratio: .95; }
+}

@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# I keep local database files out of Git.
+/data/
+
+# I keep private photographs and videos outside Git.
+# Existing tracked starter icons are not private photographs.
+/public/*
+!/public/masked-placeholder.svg
+
+# This generated file contains a private photograph encoded as text.
+/src/data/hero-preview.ts
